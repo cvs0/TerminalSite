@@ -180,6 +180,24 @@ export const osint = async (args: string[]): Promise<string> => {
   return results;
 };
 
+export const listdir = async (args: string[]): Promise<string> => {
+  const paths: string[] = [];
+  const numPaths = 100; // Number of paths to generate
+
+  for (let i = 0; i < numPaths; i++) {
+    const pathLength = Math.floor(Math.random() * 10) + 1; // Random path length
+    let path = '';
+    for (let j = 0; j < pathLength; j++) {
+      const dirNameLength = Math.floor(Math.random() * 5) + 1; // Random directory name length
+      const dirName = Math.random().toString(36).substring(2, 2 + dirNameLength); // Random directory name
+      path += `/${dirName}`;
+    }
+    paths.push(path);
+  }
+
+  return paths.join('\n');
+};
+
 
 export const banner = (args?: string[]): string => {
   return `
