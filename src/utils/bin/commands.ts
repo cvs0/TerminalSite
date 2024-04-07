@@ -30,7 +30,6 @@ export const about = async (args: string[]): Promise<string> => {
 Welcome to my website!
 More about me:
 'sumfetch' - short summary.
-'resume' - my latest resume.
 'readme' - my github readme.`;
 };
 
@@ -121,6 +120,35 @@ export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
   return `Permission denied: with little power comes... no responsibility? `;
 };
+
+export const discord = async (args?: string[]): Promise<String> => {
+  window.open('https://discord.com/users/1147380185893716068')
+  return('[USERNAME]: cvs0.\n[USERID]: 1147380185893716068')
+}
+
+export const jndildap = async (args?: string[]): Promise<String> => {
+  return('Hello from Minecraft RCE exploit! :)')
+}
+
+export const cat = async (args: string[]): Promise<string> => {
+  if (args.length !== 1) {
+    return 'Usage: cat <file>';
+  }
+
+  const fileName = args[0];
+
+  try {
+    const response = await fetch(`/cat_files/${fileName}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${fileName}`);
+    }
+    const text = await response.text();
+    return text;
+  } catch (error) {
+    return `Error: ${error.message}`;
+  }
+};
+
 
 export const banner = (args?: string[]): string => {
   return `
