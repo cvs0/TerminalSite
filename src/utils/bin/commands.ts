@@ -4,7 +4,6 @@
 import * as bin from './index';
 import config from '../../../config.json';
 import HeadshotImg from "../../Headshot.png"
-const net = require('net')
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
