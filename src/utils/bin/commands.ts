@@ -4,6 +4,7 @@
 import * as bin from './index';
 import config from '../../../config.json';
 import HeadshotImg from "../../Headshot.png"
+const net = require('net')
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
@@ -147,6 +148,37 @@ export const cat = async (args: string[]): Promise<string> => {
   } catch (error) {
     return `Error: ${error.message}`;
   }
+};
+
+// Define the list of websites to search
+const websites: { name: string, url: (username: string) => string }[] = [
+  { name: 'Twitter', url: (username) => `https://twitter.com/${username}` },
+  { name: 'Facebook', url: (username) => `https://www.facebook.com/${username}` },
+  { name: 'Youtube', url: (username) => `https://www.youtube.com/@${username}`},
+  { name: 'Instagram', url: (username) => `https://www.instagram.com/${username}`},
+  { name: 'Ebay', url: (username) => `https://www.ebay.com/usr/${username}`},
+  { name: 'Steam', url: (username) => `https://steamcommunity.com/id/${username}`},
+  { name: 'Reddit', url: (username) => `https://www.reddit.com/user/${username}`},
+  { name: 'Github', url: (username) => `https://www.github.com/${username}`},
+  { name: 'Pinterest', url: (username) => `https://www.pinterest.com/${username}`},
+  { name: 'Snapchat', url: (username) => `https://www.snapchat.com/add/${username}`},
+  { name: 'Twitch', url: (username) => `https://www.twitch.tv/${username}`},
+];
+
+export const osint = async (args: string[]): Promise<string> => {
+  if (args.length !== 1) {
+    return 'Usage: osint <username>';
+  }
+
+  const username = args[0];
+  let results = '';
+
+  for (const site of websites) {
+    const url = site.url(username);
+      results += `<a href="${url}" target="_blank">${site.name}: Found</a><br>`;
+  }
+
+  return results;
 };
 
 
