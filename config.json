@@ -10,11 +10,8 @@
   "email": "cvs0_main@proton.me",
   "ps1_hostname": "cvs0",
   "ps1_username": "root",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
-  "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
   "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
+    "paypal": "https://www.paypal.com/paypalme/cvs0"
   },
   "colors": {
     "light": {
