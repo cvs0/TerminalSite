@@ -199,31 +199,30 @@ export const listdir = async (args: string[]): Promise<string> => {
 };
 
 
-export const banner = (args?: string[]): JSX.Element => {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ marginRight: '2em' }}>
-        <Image
-          src={HeadshotImg.src}
-          alt="Headshot"
-          width={180}
-          height={180}
-          layout="fixed"
-        />
-      </div>
-      <div>
-        <pre style={{ fontFamily: 'monospace' }}>
-           ██████╗██╗   ██╗███████╗ ██████╗ 
-          ██╔════╝██║   ██║██╔════╝██╔═████╗
-          ██║     ██║   ██║███████╗██║██╔██║
-          ██║     ╚██╗ ██╔╝╚════██║████╔╝██║
-          ╚██████╗ ╚████╔╝ ███████║╚██████╔╝
-           ╚═════╝  ╚═══╝  ╚══════╝ ╚═════╝ 
-        </pre>
-        <p>Type 'help' to see the list of available commands.</p>
-        <p>Type 'sumfetch' to display summary.</p>
-        <p>Type 'projects' to display my projects.</p>
-      </div>
+export const banner = (args?: string[]): string => {
+  return `
+  <div style="display: flex; align-items: center;">
+    <Image 
+      style="margin-right: 2em;" 
+      src="${HeadshotImg.src}" 
+      width={180} 
+      height={180} 
+      alt="Headshot Image"
+    />
+    <div>
+      <pre style="font-family: monospace;">
+         ██████╗██╗   ██╗███████╗ ██████╗ 
+        ██╔════╝██║   ██║██╔════╝██╔═████╗
+        ██║     ██║   ██║███████╗██║██╔██║
+        ██║     ╚██╗ ██╔╝╚════██║████╔╝██║
+        ╚██████╗ ╚████╔╝ ███████║╚██████╔╝
+         ╚═════╝  ╚═══╝  ╚══════╝ ╚═════╝ 
+      </pre>
+      <p>Type 'help' to see the list of available commands.</p>
+      <p>Type 'sumfetch' to display summary.</p>
+      <p>Type 'projects' to display my projects.</p>
     </div>
-  );
+  </div>
+  </div>
+  `;
 };
