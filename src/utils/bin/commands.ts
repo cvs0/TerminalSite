@@ -202,13 +202,15 @@ export const listdir = async (args: string[]): Promise<string> => {
 export const banner = (args?: string[]): JSX.Element => {
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <Image
-        src={HeadshotImg.src}
-        alt="Headshot"
-        width={180}
-        height={180}
-        style={{ marginRight: '2em' }}
-      />
+      <div style={{ marginRight: '2em' }}>
+        <Image
+          src={HeadshotImg.src}
+          alt="Headshot"
+          width={180}
+          height={180}
+          layout="fixed"
+        />
+      </div>
       <div>
         <pre style={{ fontFamily: 'monospace' }}>
            ██████╗██╗   ██╗███████╗ ██████╗ 
