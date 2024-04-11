@@ -5,7 +5,8 @@ import { Input } from '../components/input';
 import { useHistory } from '../components/history/hook';
 import { History } from '../components/history/History';
 import { banner } from '../utils/bin';
-
+import Image from 'next/image';
+import HeadshotImg from '../Headshot.png';
 interface IndexPageProps {
   inputRef: React.MutableRefObject<HTMLInputElement>;
 }
@@ -39,6 +40,16 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     <>
       <Head>
         <title>{config.title}</title>
+        <meta name="description" content="Your description here" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="en" />
+        <html lang="en" />
+
+        <link rel="preload" href={HeadshotImg.src} as="image" />
       </Head>
 
       <div className="p-8 overflow-hidden h-full border-2 rounded border-light-yellow dark:border-dark-yellow">
