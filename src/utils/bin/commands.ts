@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 // List of commands that do not require API calls
-
+import Image from 'next/image';
 import * as bin from './index';
 import config from '../../../config.json';
 import HeadshotImg from "../../Headshot.png"
@@ -199,24 +199,29 @@ export const listdir = async (args: string[]): Promise<string> => {
 };
 
 
-export const banner = (args?: string[]): string => {
-  return `
-  <div style="display: flex; align-items: center;">
-    <img style="margin-right: 2em;" src=${HeadshotImg.src} width="180px" />
-    <div>
-      <pre style="font-family: monospace;">
-         ██████╗██╗   ██╗███████╗ ██████╗ 
-        ██╔════╝██║   ██║██╔════╝██╔═████╗
-        ██║     ██║   ██║███████╗██║██╔██║
-        ██║     ╚██╗ ██╔╝╚════██║████╔╝██║
-        ╚██████╗ ╚████╔╝ ███████║╚██████╔╝
-         ╚═════╝  ╚═══╝  ╚══════╝ ╚═════╝ 
-      </pre>
-      <p>Type 'help' to see the list of available commands.</p>
-      <p>Type 'sumfetch' to display summary.</p>
-      <p>Type 'projects' to display my projects.</p>
+export const banner = (args?: string[]): JSX.Element => {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <Image
+        src={HeadshotImg.src}
+        alt="Headshot"
+        width={180}
+        height={180}
+        style={{ marginRight: '2em' }}
+      />
+      <div>
+        <pre style={{ fontFamily: 'monospace' }}>
+           ██████╗██╗   ██╗███████╗ ██████╗ 
+          ██╔════╝██║   ██║██╔════╝██╔═████╗
+          ██║     ██║   ██║███████╗██║██╔██║
+          ██║     ╚██╗ ██╔╝╚════██║████╔╝██║
+          ╚██████╗ ╚████╔╝ ███████║╚██████╔╝
+           ╚═════╝  ╚═══╝  ╚══════╝ ╚═════╝ 
+        </pre>
+        <p>Type 'help' to see the list of available commands.</p>
+        <p>Type 'sumfetch' to display summary.</p>
+        <p>Type 'projects' to display my projects.</p>
+      </div>
     </div>
-  </div>
-`;
+  );
 };
-
