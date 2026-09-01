@@ -33,14 +33,6 @@ More about me:
 'readme' - my github readme.`;
 };
 
-// Donate
-export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
-here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.ko_fi}" target="_blank">ko-fi</a></u>
-`;
-};
-
 // Contact
 export const email = async (args: string[]): Promise<string> => {
   window.open(`mailto:${config.email}`);
@@ -69,11 +61,6 @@ export const bing = async (args: string[]): Promise<string> => {
   return `Wow, really? You are using bing for ${args.join(' ')}?`;
 };
 
-export const reddit = async (args: string[]): Promise<string> => {
-  window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
-  return `Searching reddit for ${args.join(' ')}...`;
-};
-
 // Typical linux commands
 export const echo = async (args: string[]): Promise<string> => {
   return args.join(' ');
@@ -92,8 +79,7 @@ directories`;
 };
 
 export const cd = async (args: string[]): Promise<string> => {
-  return `unfortunately, i cannot afford more directories.
-if you want to help, you can type 'donate'.`;
+  return `unfortunately, i cannot afford more directories.`;
 };
 
 export const date = async (args: string[]): Promise<string> => {
@@ -151,13 +137,10 @@ export const cat = async (args: string[]): Promise<string> => {
 
 // Define the list of websites to search
 const websites: { name: string, url: (username: string) => string }[] = [
-  { name: 'Twitter', url: (username) => `https://twitter.com/${username}` },
   { name: 'Facebook', url: (username) => `https://www.facebook.com/${username}` },
-  { name: 'Youtube', url: (username) => `https://www.youtube.com/@${username}`},
   { name: 'Instagram', url: (username) => `https://www.instagram.com/${username}`},
   { name: 'Ebay', url: (username) => `https://www.ebay.com/usr/${username}`},
   { name: 'Steam', url: (username) => `https://steamcommunity.com/id/${username}`},
-  { name: 'Reddit', url: (username) => `https://www.reddit.com/user/${username}`},
   { name: 'Github', url: (username) => `https://www.github.com/${username}`},
   { name: 'Pinterest', url: (username) => `https://www.pinterest.com/${username}`},
   { name: 'Snapchat', url: (username) => `https://www.snapchat.com/add/${username}`},

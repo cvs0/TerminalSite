@@ -15,9 +15,9 @@ const sumfetch = async (args: string[]): Promise<string> => {
  @@           @@          @@        @@       <u><a href="mailto:${config.email}" target="_blank">${config.email}</a></u>
   @@           @@        @@        @@        <u><a href="https://github.com/${config.social.github}" target="_blank">github.com/${config.social.github}</a></u>
    @@             @@@@@@          @@        
-     @@@                        @@@         -----------
-        @@@                  @@@ @@          DONATE 
-         @|  @@@@@@@@@@@@@@@@   @@           <u><a href="${config.donate_urls.ko_fi}" target="_blank">${config.donate_urls.ko_fi}</a></u>
+     @@@                        @@@         
+        @@@                  @@@ @@         
+         @|  @@@@@@@@@@@@@@@@   @@          
          @|                      @@         
 
 `;
@@ -33,9 +33,9 @@ const sumfetch = async (args: string[]): Promise<string> => {
 ▐▓                                 ▐▓        <u><a href="mailto:${config.email}" target="_blank">${config.email}</a></u>
 ▐▓▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▓        <u><a href="https://github.com/${config.social.github}" target="_blank">github.com/${config.social.github}</a></u>
    ▓▓      ▐▓▓    ▓▓    ▐▓▓     ▓▓          
-    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓           -----------
-      ▓▓▓   ▐▓▓   ▓▓   ▓▓▓   ▓▓▀             DONATE 
-        ▀▓▓▄▄ ▀▓▓▄▓▓▄▓▓▓▄▄▓▓▀                <u><a href="${config.donate_urls.ko_fi}" target="_blank">${config.donate_urls.ko_fi}</a></u>
+    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓           
+      ▓▓▓   ▐▓▓   ▓▓   ▓▓▓   ▓▓▀            
+        ▀▓▓▄▄ ▀▓▓▄▓▓▄▓▓▓▄▄▓▓▀               
             ▀▓▓▓▓▓▓▓▓▓▓▓▀▀                  
 
 `;
